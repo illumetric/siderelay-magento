@@ -1,0 +1,6 @@
+<?php
+/** @var \SideRelay\Tracking\Block\Purchase $block */
+$event = $block->event();
+if ($event): ?>
+<script>(function(){var event=<?= /* @noEscape */ json_encode($event, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;function send(){if(window.SideRelay)SideRelay.track(event);}if(window.SideRelay)send();else window.addEventListener('siderelay:configured',send,{once:true});})();</script>
+<?php endif; ?>

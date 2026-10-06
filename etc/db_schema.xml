@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="sales_order" resource="sales"><column xsi:type="text" name="siderelay_context" nullable="true" comment="Encrypted SideRelay permission context"/></table>
+<table name="siderelay_tracking_outbox" resource="default" engine="innodb" comment="SideRelay background tracking"><column xsi:type="int" name="order_id" unsigned="true" nullable="false"/><column xsi:type="timestamp" name="occurred_at" nullable="false" default="CURRENT_TIMESTAMP"/><column xsi:type="int" name="attempts" unsigned="true" nullable="false" default="0"/><column xsi:type="varchar" name="status" length="24" nullable="false" default="pending"/><column xsi:type="timestamp" name="next_attempt_at" nullable="false" default="CURRENT_TIMESTAMP"/><constraint xsi:type="primary" referenceId="PRIMARY"><column name="order_id"/></constraint><index referenceId="SIDERELAY_PENDING" indexType="btree"><column name="status"/><column name="next_attempt_at"/></index></table>
+</schema>

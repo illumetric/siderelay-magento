@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"><type name="Magento\Quote\Model\Quote\Payment"><plugin name="siderelay_permission" type="SideRelay\Tracking\Plugin\PaymentData"/></type><type name="Magento\Framework\Console\CommandList"><arguments><argument name="commands" xsi:type="array"><item name="siderelay_retry" xsi:type="object">SideRelay\Tracking\Console\Retry</item></argument></arguments></type></config>

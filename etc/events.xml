@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+<event name="sales_order_place_after"><observer name="siderelay_choice" instance="SideRelay\Tracking\Observer\SaveChoice"/></event>
+<event name="sales_order_invoice_pay"><observer name="siderelay_purchase" instance="SideRelay\Tracking\Observer\QueuePurchase"/></event>
+</config>

@@ -1,0 +1,32 @@
+{
+  "name": "siderelay/magento",
+  "description": "SideRelay paid-order tracking for Magento",
+  "type": "magento2-module",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2",
+    "siderelay/php": "^0.1.1"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/illumetric/siderelay-php"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "SideRelay\\Tracking\\": ""
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.2.0"
+    }
+  },
+  "scripts": {
+    "test": "php tests/run.php"
+  }
+}
